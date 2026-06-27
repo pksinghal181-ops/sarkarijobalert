@@ -1,0 +1,12 @@
+services:
+  web-frontend:
+    image: nginx:alpine
+    ports:
+      - "3000:80"
+  api-core:
+    image: node:18
+    command: ["node", "-e", "console.log('API Running')"]
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: password123
